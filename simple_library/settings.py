@@ -37,6 +37,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost"]
 
+AUTH_USER_MODEL = 'app.User'
+
 
 # Application definition
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """borrow class module"""
 
 from django.db import models
@@ -11,7 +11,6 @@ class Borrow(BaseModel):
         'User', on_delete=models.CASCADE, related_name='borrower')
     book = models.ForeignKey(
         'Book', on_delete=models.CASCADE, related_name='borrowed')
-    is_borrowed = models.BooleanField(default=False)
     return_date = models.DateTimeField(null=True)
 
     def __str__(self):
