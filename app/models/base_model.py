@@ -10,7 +10,7 @@ class BaseModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        abstract = True  # BaseModel is an abstract class.
+        abstract = True  # BaseModel should be an abstract class.
     
     def save(self, *args, **kwargs):
         """save instance to database"""
