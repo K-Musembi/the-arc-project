@@ -27,4 +27,3 @@ class BaseModel(models.Model):
     def delete(self, *args, **kwargs):
         """delete current instance from db"""
         super().delete(*args, **kwargs)
-    
