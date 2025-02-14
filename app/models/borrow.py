@@ -7,8 +7,10 @@ from .base_model import BaseModel
 
 class Borrow(BaseModel):
     """borrow class"""
-    user = models.ForeignKey('User', on_delete=models.CASCADE)
-    book = models.ForeignKey('Book', on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        'User', on_delete=models.CASCADE, related_name='borrower')
+    book = models.ForeignKey(
+        'Book', on_delete=models.CASCADE, related_name='borrowed')
     is_borrowed = models.BooleanField(default=False)
     return_date = models.DateTimeField(null=True)
 
