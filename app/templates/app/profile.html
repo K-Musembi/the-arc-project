@@ -1,0 +1,22 @@
+{% extends 'app/layout.html' %}
+
+{% block title %}Profile: {{ user.username }}{% endblock %}
+
+{% block content %}
+<h1>Welcome, {{ user.username }}</h1>
+<p>Email: {{ user.email }}</p>
+
+<h2>Your Borrowed Books</h2>
+<ul>
+  {% for borrow in borrowed_books %}
+    <li>
+      {{ borrow.book.title }} - Borrowed on {{ borrow.created_at|date:"Y-m-d H:i" }}
+      {% if borrow.book.is_borrowed %}
+         | <a href="{% url 'return_book' borrow.book.title %}">Return</a>
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>You have not borrowed any books.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

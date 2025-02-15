@@ -1,0 +1,21 @@
+{% extends 'app/layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Library Books</h1>
+<ul>
+  {% for book in books %}
+    <li>
+      {{ book.title }}
+      {% if not book.is_borrowed %}
+        | <a href="{% url 'borrowed' book.title %}">Borrow</a>
+      {% else %}
+        | <a href="{% url 'return_book' book.title %}">Return</a>
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>No books available.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
