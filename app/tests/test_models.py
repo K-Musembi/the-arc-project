@@ -1,7 +1,7 @@
 import pytest
 from django.contrib.auth import get_user_model
-from app.models.book import Book
-from app.models.borrow import Borrow
+from ..models import Book
+from ..models import Borrow
 
 User = get_user_model()
 

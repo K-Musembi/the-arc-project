@@ -12,13 +12,13 @@ User = get_user_model()
 def home(request):
     """home page view"""
     books = Book.objects.all()
-    return render(request, 'home.html', {'books': books})
+    return render(request, 'app/home.html', {'books': books})
 
 def signup_view(request):
-    return render(request, 'signup.html')
+    return render(request, 'app/signup.html')
 
 def login_view(request):
-    return render(request, 'login.html')
+    return render(request, 'app/login.html')
 
 def signup(request):
     """sign up view"""
@@ -57,7 +57,7 @@ def profile(request, username):
     user = get_object_or_404(User, username=username)
     borrowed_books = Borrow.objects.filter(user=user)
 
-    return render(request, 'profile.html', borrowed_books)
+    return render(request, 'app/profile.html', borrowed_books)
 
 def borrowed(request, title):
     book = get_object_or_404(Book, title=title)

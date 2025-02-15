@@ -18,13 +18,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv()  # because .env is in the root directory
 
-username = os.getenv("USER")
-password = os.getenv("PASSWORD")
-host = os.getenv("HOST")
-database = os.getenv("DATABASE")
-port = os.getenv("PORT")
+username = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
+host = os.getenv("DB_HOST")
+database = os.getenv("DB_DATABASE")
+port = os.getenv("DB_PORT")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
