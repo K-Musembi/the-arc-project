@@ -1,9 +1,6 @@
 Simple Library Project
 
 ------------------------------------------------------------------
-(Note: The project has been implemented using Python Django instead of Ruby on Rails framework due to time constraints.)
-
-------------------------------------------------------------------
 Implementation:
 - Linux Ubuntu system
 - Activate venv (virtual environment)
